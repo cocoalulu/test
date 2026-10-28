@@ -8695,11 +8695,11 @@
             try {
                 let reply = '';
                 try {
-                    reply = await callChat({ system, messages: buildChatHistory(personaId, 50, useVision), api, vision: useVision });
+                    reply = await callChat({ system, messages: buildChatHistory(personaId, 20, useVision), api, vision: useVision });
                 } catch (e) {
                     if (useVision) {
                         const sys2 = system + '\n\n（你其实看不到图片的具体内容，请依据上下文自然地回应，不要描述图片细节。）';
-                        reply = await callChat({ system: sys2, messages: buildChatHistory(personaId, 50, false), api, vision: false });
+                        reply = await callChat({ system: sys2, messages: buildChatHistory(personaId, 20, false), api, vision: false });
                     } else {
                         throw e;
                     }
